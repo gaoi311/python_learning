@@ -1,0 +1,74 @@
+day51 2018-09-13
+
+1. 内容回顾
+	1. 装饰器 初识
+		1. 不改变函数原来的调用方式 动态地 给函数 添加功能
+		
+	2. 昨日内容
+		1. 动画
+		2. each循环
+			1. $.each()
+			2. $().each()
+		3. data
+			
+2. 今日内容
+	1. 页面加载完之后才执行的JS代码
+		1. DOM方式
+			window.onload = function(){}
+		2. jQuery方式
+			$(document).ready(function(){...})	
+	2. Bootstrap
+		1. Bootstrap是什么？
+			twitter公司开源的一个前端开发框架。（一坨HTML、CSS和JS的代码）
+		2. Bootstrap的版本
+			3.3.版本
+		3. Bootstrap的使用
+			1. 下载
+				https://v3.bootcss.com/
+				
+			2. 导入
+				link标签导入 bootstrap.css或者bootstrap.min.css
+		4. 常用样式类
+			1. 容器
+				1. container
+				2. container-fluid
+			2. 栅格系统
+				把一行均分成最多12列
+				可以设置标签占多少列
+				
+				1. row表示一行
+				2. col-xx-**表示一列
+					xx: 表示样式适用的屏幕尺寸
+						- xs  手机
+						- sm  平板
+						- md  桌面显示器
+						- lg  超大屏幕
+					**：表示占多少份
+						- 取值范围： 1~12
+				3. col-xx-offset-**:
+					表示左侧空几份！
+				4. 列支持再嵌套（再写一行，分成12份）
+				5. 列排序
+					1. col-xx-push-*  --> 往右推
+					2. col-xx-pull-*  --> 往左拉
+			3. 布局样式
+			4. 表格
+			5. 表单
+			6. 按钮
+			7. 图片
+			8. 辅助类
+				1. 文本颜色
+				2. 背景颜色
+				3. 快速浮动
+				4. 清除浮动
+			
+3. 今日作业
+	1. 把课上的登录示例自己独立写完
+		样式
+		JS
+	2. 只用复制粘贴实现 信息手机卡 页面
+		
+			
+			
+			
+			

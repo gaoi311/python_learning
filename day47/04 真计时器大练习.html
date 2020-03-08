@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta http-equiv="content-Type" charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <title>Title</title>
+</head>
+<body>
+
+<input type="text" id="i1">
+<button id="b1">开始</button>
+<button id="b2">停止</button>
+<script>
+    var i1Ele = document.getElementById("i1");
+    var t;
+
+    function f() {
+        var now = new Date();
+        i1Ele.value = now.toLocaleString();
+    }
+
+
+    f();
+    var b1Ele = document.getElementById("b1");
+    // 点开始
+    b1Ele.onclick = function (ev) {
+        if (!t) {
+            t = setInterval(f, 1000)
+        }
+    };
+
+    var b2Ele = document.getElementById("b2");
+    // 点停止
+    b2Ele.onclick = function (ev) {
+        clearInterval(t);  // 根据id清除定时任务
+        console.log(t);
+        t = null;
+    }
+</script>
+</body>
+</html>

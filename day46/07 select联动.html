@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta http-equiv="content-Type" charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <title>Title</title>
+</head>
+<body>
+
+<label for="s1">省</label>
+<select id="s1">
+    <option value="">-请选择省-</option>
+</select>
+
+<label for="s2">市</label>
+<select id="s2">
+
+</select>
+
+<script>
+    var data = {
+        "北京": ["昌平区", "海淀区", "朝阳区"],
+        "上海": ["浦东区", "徐汇区", "浦东新区"],
+        "山东": ["烟台", "青岛", "威海"]
+    };
+    var s1Ele = document.getElementById("s1");
+    var s2Ele = document.getElementById("s2");
+    // 1. 拿到所有的省，在s1中生成对应的option选项
+    for (var i in data){
+        console.log(i);
+        // 1.1 创建option标签
+        var tmp = document.createElement("option");
+        // 1.2 把省信息添加到option标签中
+        tmp.innerText = i;
+        // 1.3 把创建好的option标签插入到第一个select标签中
+        s1Ele.appendChild(tmp);
+    }
+
+    // 当用户选中某个省之后才做的事儿
+    // 当第一个select框的值发生变化的时候触发的动作
+    s1Ele.onchange = function (ev) {
+        // 0. 先清空第二个select框的option
+        s2Ele.innerHTML = "";
+        // 1. 获取用户选中的省
+        console.log(this.value);
+        var p = this.value;
+        // 2. 根据用户选择的省，去data中找省对应的城市数据
+        var cityArray = data[p];
+        // 3. 遍历所有的城市数据，给第二个select框添加option选项
+        for (var j in cityArray){
+            console.log(cityArray[j]);
+            // 3.1 生成空的option
+            var tmp = document.createElement("option");
+            // 3.2 给option添加文本
+            tmp.innerText = cityArray[j];
+            // 3.3 把生成的option追加到第二个select标签中
+            s2Ele.appendChild(tmp);
+        }
+    }
+
+</script>
+</body>
+</html>

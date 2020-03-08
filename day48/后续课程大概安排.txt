@@ -1,0 +1,38 @@
+Python基础
+	语法
+	面向对象
+	网络编程
+	并发编程
+前端                    瑟瑟发抖的day48
+
+数据库
+Django
+	Django基础
+	Django进阶
+		
+	BBS+权限
+	路飞学城
+		Django + Django REST framework
+		Vue
+Flask
+	Flask基础
+	人工智能项目
+	MangoDB
+	Redis
+爬虫
+	Tornado
+	BS4
+	Scrapy
+Linux
+	基本命令
+	基本软件环境搭建和配置
+	Nginx/Docker....
+	Python项目部署
+算法和设计模式
+金融量化分析
+Go
+面试辅导
+	刷面试题
+	面试技巧/模拟面试
+	
+120days

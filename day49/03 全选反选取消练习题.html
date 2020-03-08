@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta http-equiv="content-Type" charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <title>Title</title>
+</head>
+<body>
+
+<table border="1">
+    <thead>
+    <tr>
+        <th>序号</th>
+        <th>姓名</th>
+        <th>爱好</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td><input type="checkbox"></td>
+        <td>蝇蝇</td>
+        <td>用手</td>
+    </tr>
+    <tr>
+        <td><input type="checkbox"></td>
+        <td>康抻</td>
+        <td>gay in gay out</td>
+    </tr>
+    <tr>
+        <td><input type="checkbox"></td>
+        <td>黄袍哥</td>
+        <td>吹牛逼</td>
+    </tr>
+    </tbody>
+</table>
+<hr>
+<button id="b1">全选</button>
+<button id="b2">反选</button>
+<button id="b3">取消</button>
+<script src="jquery-3.3.1.js"></script>
+<script>
+    // 全选
+    $("#b1").click(function () {
+        // 找到所有的checkbox,选中:prop("checked", true)
+        $(":checkbox").prop("checked", true);
+    });
+    // 取消
+    $("#b3").click(function () {
+        // 找到所有的checkbox,取消选中:prop("checked", false)
+        $(":checkbox").prop("checked", false);
+    });
+    // 反选
+    $("#b2").click(function () {
+        // 找到所有选中的checkbox取消选中
+        // $("input:checked").prop("checked", false);   // 此时全部都没选中
+        // // 找到所有没选中的checkbox选中
+        // $("input:not(:checked)").prop("checked", true)  // 此时都全选中
+
+        // var $check = $(":checkbox");
+        // for (var i=0;i<$check.length;i++){
+        //     var tmp = $check[i];
+        //     var s = $(tmp).prop("checked");
+        //
+        //     // 如果s是true就改成false，如果是false就改成true
+        //     // if (s){
+        //     //     $(tmp).prop("checked", false);
+        //     // }else {
+        //     //     $(tmp).prop("checked", true);
+        //     // }
+        //
+        //     $(tmp).prop("checked", !s);
+        // }
+
+        // 找到所有选中的checkbox;
+        var $checked = $("input:checked");
+        // 找到没有选中的
+        var $unchecked = $("input:not(:checked)");
+        $checked.prop("checked", false);
+        $unchecked.prop("checked", true);
+    });
+</script>
+</body>
+</html>

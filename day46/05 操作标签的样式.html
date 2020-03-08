@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta http-equiv="content-Type" charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <title>Title</title>
+    <style>
+        .c {
+            height: 200px;
+            width: 200px;
+            background-color: red;
+            border-radius: 50%;
+        }
+        .c1 {
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+
+<div id="d1" class="c c1"></div>
+
+
+
+<button id="b1" onclick="change();">点我1</button>
+
+<input id="b2" type="button" value="点我2">
+
+<script>
+    function change() {
+        var d1Ele = document.getElementById("d1");
+        d1Ele.classList.toggle("c1");
+    }
+
+    // 通过JS给标签绑定事件
+    var b2Ele = document.getElementById("b2");
+    b2Ele.onclick=function () {
+        console.log(this);
+        // this表示触发事件的标签本身
+        var d1Ele = document.getElementById("d1");
+        d1Ele.classList.toggle("c1");
+    }
+</script>
+</body>
+</html>

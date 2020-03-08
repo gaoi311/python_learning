@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div span{
+            color: red;
+        }
+        #d2>span{
+            color: green;
+        }
+        #d1+span{
+            color: grey;
+        }
+        span[s14]{
+            color: pink;
+        }
+        /*input[type="text"]{*/
+            /*border: 1px solid red;*/
+        /*}*/
+        a:link{
+            color: #FF0000;
+        }
+        a:visited{
+            color: #00FF00;
+        }
+        a:hover{
+            color: #FF00FF;
+        }
+        a:active{
+            color: #0000FF;
+        }
+        #123:hover{
+            color: red;
+        }
+        input:focus{
+            outline: none;
+            border: 1px solid deeppink;
+        }
+        p:before{
+            content: "*";
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<div id="d1">
+    <div id="d2">
+        <span>span1</span>
+        <p>
+            <span>span2</span>
+        </p>
+    </div>
+</div>
+<span id="123">span3</span>
+<input type="text">
+<input type="password">
+
+<a href="http://www.abc.com">abc</a>
+<a href="http://www.luffycity.com">路飞学城</a>
+<input type="text">
+<p>hahahahahh</p>
+</body>
+</html>

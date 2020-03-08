@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta http-equiv="content-Type" charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="d1">
+    <p id="p1">
+        <span id="s1">span</span>
+    </p>
+</div>
+<hr>
+<form action="">
+    <input type="text" id="i2">
+    <input type="submit" value="提交" id="i1">
+</form>
+
+<script src="jquery-3.3.1.js"></script>
+<script>
+    $("#s1").click(function (event) {
+        // event表示事件本身
+        alert("这是span标签");
+        // 阻止事件冒泡
+        event.stopPropagation()
+    });
+    $("#p1").click(function () {
+        alert("这是p标签")
+    });
+    $("#d1").click(function () {
+        alert("这是div标签")
+    });
+
+    // 点击submit按钮，先校验input框的值为不为空，
+    // 为空就不提交，不为空就提交
+     $("#i1").click(function (event) {
+        alert("这是form表单的提交按钮！");
+        var value = $("#i2").val();
+        if (value.length === 0){
+            // 为空就不提交
+            // 不执行后续默认的提交事件
+            // 阻止默认事件的执行
+            // event.preventDefault()
+            return false;
+        }
+    });
+</script>
+</body>
+</html>

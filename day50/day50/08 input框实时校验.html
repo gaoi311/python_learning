@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta http-equiv="content-Type" charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <title>Title</title>
+</head>
+<body>
+
+<input type="text" id="i1">
+
+<script src="jquery-3.3.1.js"></script>
+<script>
+    // input框失去焦点就触发
+    // $("#i1").blur(function () {
+    //     var value = $(this).val();
+    //     console.log(value);
+    // });
+
+
+    // 只要input框的值发生变化就触发
+    $("#i1").on("input", function () {
+        var value = $(this).val();
+        console.log(value);
+    })
+</script>
+
+</body>
+</html>

@@ -1,0 +1,72 @@
+day44 2018-09-04
+
+1. 内容回顾
+	1. 今日面试题
+		复习list和list内置常用方法
+	2. CSS
+		
+	
+2. 今日内容
+	https://www.cnblogs.com/liwenzhou/p/8004649.html
+	HTML: 文档的结构
+	CSS：修改文档的外观样式
+	JS： 实现页面上的动态效果
+	
+	1. JS的历史及ECMAScript
+		JS --> JavaScript（雷峰塔）     Java（雷锋）
+		
+		网景
+		
+		ECMAScript 一个标准  ES5/ES6
+		
+		node.js  --> 跑在服务端的JS
+		
+	2. JS要学习的内容
+		JS三大部分：
+			1. 基础语法
+			2. 操作浏览器对象   BOM
+			3. 操作文档上的标签 DOM
+	
+	3. JS导入方式
+		1. 直接写在页面的Script标签内部
+		2. 将JS代码写在单独的一个js文件然后通过页面上的script标签的src属性导入
+	
+	4. JS基础语法
+		1. 数据类型
+			1. 数字（number）
+				parseInt()
+				parseFloat()
+				NaN      --> Not a Number
+			2. 字符串
+			3. 布尔值
+			4. null
+			5. undefined
+			6. 对象
+				1. 数组（列表）
+				2. 自定义对象（字典）
+					
+		2. 运算符
+			注意强等于和弱等于的区别
+			1. 算术运算符
+			2. 赋值运算符
+			3. 比较运算符
+			4. 逻辑运算符
+		3. 流程控制
+			1. if else
+			2. for 循环
+			3. switch
+			4. while
+			
+3. 今日任务
+	1. 先整理Blog,边写上课的例子敲一遍
+	2. 继续写小米商城
+	3. 预习JS后面的内容
+	
+4. 每天回去洗脚的时候看一下之前的blog
+
+	
+	
+	
+	
+	
+	

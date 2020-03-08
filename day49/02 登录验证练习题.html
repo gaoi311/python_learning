@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta http-equiv="content-Type" charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <title>d登录验证练习题</title>
+</head>
+<body>
+
+<form action="" id="f1">
+    <p>
+        <label>用户名：
+            <input type="text" name="username" id="i1">
+            <span></span>
+        </label>
+    </p>
+    <p>
+        <label>密码：
+            <input type="password" name="password" id="i2">
+            <span></span>
+        </label>
+    </p>
+    <button type="button" id="b1">登录</button>
+</form>
+
+<script src="jquery-3.3.1.js"></script>
+<script>
+    $("#b1").click(function () {
+        var $inputEles = $("#f1 input");
+        for (var i=0;i<$inputEles.length;i++){
+            var tmp = $inputEles[i];
+            if ($(tmp).val().length === 0){
+                // 表示该input框的值为空
+                console.log($(tmp).parent().text().trim().slice(0,-1));
+                var s = $(tmp).parent().text().trim().slice(0,-1);
+                $(tmp).next().text(s + "不能为空").css("color", "red");
+            }
+        }
+    });
+</script>
+</body>
+</html>

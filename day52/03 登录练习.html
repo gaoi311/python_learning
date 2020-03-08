@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta http-equiv="content-Type" charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Title</title>
+    <link rel="stylesheet" href="bootstrap-3.3.7/css/bootstrap.css">
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.css">
+    <style>
+        body {
+            background-color: #eeeeee;
+        }
+
+        .login-box {
+            margin-top: 50px;
+        }
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 col-md-offset-4 login-box">
+            <form class="form-horizontal">
+                <div class="col-sm-9">
+                    <h2 class="text-center">请登录</h2>
+                </div>
+
+                <div class="form-group">
+
+                    <div class="col-sm-9">
+                        <div class="input-group margin-bottom-sm">
+                            <label for="email" class="hidden">邮箱</label>
+                            <span class="input-group-addon"><i class="fa fa-envelope-o fa-fw"></i></span>
+                            <input class="form-control" type="text" id="email" placeholder="您的邮箱地址">
+                        </div>
+                        <span class="help-block"></span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-sm-9">
+                        <div class="input-group">
+                            <label for="password" class="hidden">密码</label>
+                            <span class="input-group-addon"><i class="fa fa-key fa-fw"></i></span>
+                            <input class="form-control" type="password" id="password" placeholder="请输入密码">
+                        </div>
+                        <span class="help-block"></span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-sm-9">
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox"> 记住我
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-sm-9">
+                        <button type="button" id="b1" class="btn btn-block btn-primary">登录</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="jquery-3.3.1.js"></script>
+<script>
+    $("#b1").click(function () {
+        $("input:not([type='checkbox'])").each(function () {
+            // 判断值为不为空
+            if ($(this).val().length === 0) {
+                // 展示错误提示
+                var errMsgPrefix = $(this).prev().prev().text();
+                $(this).parent().next().text(errMsgPrefix + "不能为空");
+                $(this).parent().parent().parent().addClass("has-error");
+            }
+        });
+    });
+
+    // 给输入框绑定获取焦点的事件
+    $("input:not([type='checkbox'])").focus(function () {
+        // 清空错误提示
+        $(this).parent().next().text("");
+        // 移除父标签的has-error
+        $(this).parent().parent().removeClass("has-error");
+    });
+</script>
+</body>
+</html>

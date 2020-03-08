@@ -1,0 +1,124 @@
+day48 2018-09-10
+
+
+1. 内容回顾
+	1. 今日面试题
+		回去看一下collections和functools
+	2. jQuery左侧菜单作业
+	
+	3. jQuery
+		1. jQuery是什么？
+			一个js插件， 相比较原生的DOM操作更简单、开发效率更高
+		2. jQuery使用
+			1. jQuery版本
+				1. 版本号 1.x/2.x/3.x
+					1.x 兼容IE6/7/8
+				2. jquery.min.js和query.js的区别
+			2. jQuery的导入
+				1. 先导入后使用
+				2. 导入方式：
+					1. 自己下载到本地使用
+					2. 使用CDN方式
+			3. jQuery的调用
+				1. $
+				2. jQuery
+			4. jQuery对象和DOM对象
+				1. 注意事项
+					jQuery对象才能调用jQuery的方法，DOM对象只能调用DOM方法
+				2. 互相转换
+					1. jQuery对象 --> DOM对象
+						$("div")  --> $("div")[0]
+					2. DOM对象    --> jQuery对象
+						this      --> $(this)	
+			5. jQuery语法
+				$("选择器").方法()
+				支持链式操作
+			6. jQuery选择器
+				1. 基本选择器
+					1. $("div")
+					2. $("#d1")
+					3. $(".c1")
+					4. $("*")
+				2. 组合选择器
+					1. $("div, .c1")      --> 找到所有div标签和有c1样式类的标签
+				3. 层级选择器
+					1. $("#d1 span")      --> id是d1标签下面所有的span标签
+					2. $("#d1>span")      --> id是d1标签下面一层的span标签
+					3. $("label+input")   --> 找到紧挨着label标签的input标签
+					4. $(".c1~div")       --> 找到c1样式类下面的div标签
+				4. 基本筛选器
+					1. :first/:last
+					2. :eq()/:gt()/:lt()
+					3. :even/:odd
+					4. $("div:not(.c1)")  --> 找到没有c1样式类的div标签
+					5. $("div:has(.c1)")  --> 找到后代中有c1样式类的div标签
+				5. 属性选择器
+					1. $("[s14]")
+					2. $("[type='text']")
+					3. $("[type!='text']")
+				6. 表单筛选器
+					1. $(":text")
+					2. $(":password")
+					3. ...
+					4. $(":disabled")
+					5. $("input:checked")
+					6. $(":selected")
+				7. 筛选器方法
+					1. .next()/.prev()
+					2. .parent()/.children()/.siblings()
+					3. .find('选择器条件')      --> 在后代查找符合要求的
+					4. .filter('选择器条件')    --> 根据条件对已经找到的结果进行二次过滤
+					5. .first()/.last()
+					6. .not()/.has()
+					7. .eq()
+			7. jQuery操作样式
+				1. 操作class
+					1. .addClass()
+					2. .removeClass()
+					3. .hasClass()
+					4. .toggleClass()
+				2. 
+			
+			
+2. 今日内容
+	1. 操作样式之直接操作CSS
+		.css("color")         --> 获取值
+		.css("color", "red")  --> 设置值、
+	2. 位置
+		position()
+		offset()
+		scrollTop()
+		scrollLeft()
+	3. 尺寸
+		height()
+		width()
+		innerHeight()
+		innerWidth()
+		outerHeight()
+		outerWidth()
+	2. 求值
+		text()
+		html()
+		val()
+	3. 属性
+		attr()
+		prop()
+	4. 绑定事件的方式
+		.click(function(){...})
+		
+		
+3. 今日作业
+	1. 自定义登录练习题
+	2. 全选反选和取消
+	3. 按照自己的计划复习Python
+	4. 预习jQuery事件
+	
+	
+给自己做好职业规划！
+给自己定确定的目标！
+
+
+
+
+
+

@@ -1,0 +1,31 @@
+day52 2018-09-14
+
+沟通能力、自学能力和独立解决问题的能力！！！
+珍惜身边人，以后都是自己的人脉资源！！！
+
+
+1. 内容回顾
+	1. 考察计算机原理
+
+	
+2. 今日内容
+	1. Bootstrap
+		1. 图标
+			1. Bootstrap内置的： https://v3.bootcss.com/components/
+			2. font-awesome图标：http://www.fontawesome.com.cn/
+			3. 阿里图标：        http://iconfont.cn/
+		2. 面板
+		3. ...
+		4. jS插件
+			1. 模态框
+			2. 轮播图
+
+	2. 插件
+		弹出插件SweetAlert：http://mishengqiang.com/sweetalert/
+		
+3. 周末大作业
+	1. 写前女友页面
+	
+
+
+

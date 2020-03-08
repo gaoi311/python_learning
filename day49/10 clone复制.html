@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta http-equiv="content-Type" charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <title>Title</title>
+</head>
+<body>
+
+<button class="btn">屠龙宝刀，点击就送！</button>
+<script src="jquery-3.3.1.js"></script>
+<script>
+    $(".btn").click(function () {
+        // 自己复制自己，然后把复制的结果插到我的后面
+        $(this).clone(true).insertAfter(this);
+    })
+</script>
+</body>
+</html>

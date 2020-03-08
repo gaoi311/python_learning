@@ -1,0 +1,109 @@
+day50 2018-09-12
+
+1. 内容回顾
+	1. 今日面试题
+	2. 昨日内容
+		1. 文档操作
+			添加HTML元素到文档树中
+			1. 内部添加
+				1. 前面加
+					1. prepend()
+					2. prependTo()
+				2. 后面加
+					1. append()
+					2. appendTo()
+			2. 外部添加
+				1. 前面加
+					1. before()
+					2. insertBefore()
+				2. 后面加
+					1. after()
+					2. insertAfter()
+			3. 删除
+				remove()
+			4. 清空
+				empty()
+			5. 替换
+				1. replaceWith()
+				2. replaceAll()
+			6. 克隆
+				clone()/clone(true)
+		2. 事件
+			1. DOM绑定事件的方式
+				1. onclick=f()
+				2. DOM对象.onclick=function(){...}
+			2. jQuery绑定事件的方式
+				1. $("").click(function(){...})
+				2. $("").on("click", "子选择器", function(){...})--> 事件委托--> 原理是事件冒泡
+			3. 阻止事件冒泡
+			
+	3. 作业
+		使用事件委托给未来的标签绑定事件。
+		
+2. 今日内容
+	jQuery中文文档：http://jquery.cuishifeng.cn/
+
+	1. 阻止事件冒泡
+		event.stopPropagation()
+	2. 阻止默认事件的执行（通常用于阻止form表单的提交）
+		event.preventDefault()
+	3. 阻止后续事件的执行
+		return false
+	4. jQuery内置动画
+		写个例子，看一下效果。有个印象就好
+	5. 补充
+		1. each
+			1. $.each(要遍历的对象, function(){...})
+			2. $("").each(function(){
+			  // this 是进入循环体的当前标签
+			  console.log(this);
+			})
+			3. 退出本层循环
+				return
+			4. 退出each循环
+				return false
+		2. .data()
+			1. .data(key, value) --> 存值
+			2. .data(key)        --> 根据key取值
+			3. .data()           --> 取所有键值对
+			4. .removeData(key)  --> 根据key删除值
+			5. .removeData()     --> 删除所有键值对
+		3. 扩展
+			1. $.extend()        --> 给jQuery扩展自定义方法
+			2. $.fn.extend()     --> 给jQuery对象扩展自定义方法
+	
+	6. 以后页面的开发
+		1. DOM里只需记忆document.createElement()
+		2. 主要使用jQuery操作
+
+		
+3. 今日任务
+	1. 整理博客
+	2. 写大作业，jQuery版的增删改查
+	
+4. 明天安排
+	1. Bootstrap ：https://v3.bootcss.com/
+	
+	复制和粘贴
+	
+5. 明天早上说一下装饰器
+
+		
+做好职业生涯的规划！
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+				
+				

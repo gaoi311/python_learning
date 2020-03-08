@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta http-equiv="content-Type" charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Title</title>
+    <link rel="stylesheet" href="bootstrap-3.3.7/css/bootstrap.css">
+    <link rel="stylesheet" href="bootstrap-sweetalert/sweetalert.css">
+</head>
+<body>
+
+<button id="i1" class="btn btn-danger">删除</button>
+<script src="jquery-3.3.1.js"></script>
+<script src="bootstrap-sweetalert/sweetalert.min.js"></script>
+<script>
+    $("#i1").click(function () {
+        // swal("燃烧我的卡路里！", "拜拜 甜甜圈", "error");
+
+        swal({
+              title: "你确定要删除吗？",
+              text: "删除就找不回来了",
+              type: "warning",
+              showCancelButton: true,  // 是否显示取消那妞
+              confirmButtonClass: "btn-danger",  // 确认按钮的class
+              confirmButtonText: "确定",
+              cancelButtonText: "取消",
+              closeOnConfirm: false  // 点击确认按钮是否关闭弹出框
+            },
+            function(){
+              swal("删除成功!", "你可以跑路了", "success");
+            });
+    });
+</script>
+</body>
+</html>

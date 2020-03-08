@@ -1,0 +1,163 @@
+day47 2018-09-07
+
+1. 内容回顾
+	1. 今日面试题
+	2. 昨日内容
+		1. BOM
+			1. location  --> 浏览器URL相关
+				1. location.href            --> 获取当前访问的URL
+				2. location.href="新URl"    --> JS控制页面跳转到指定的URL
+				3. location.reload()        --> 重新加载当前页面
+			2. 其他的了解即可
+			3. 弹出框系列
+				1. alert()  ***
+				2. confirm()
+				3. prompt() 
+			4. 计时器
+				1. 一段时间之后做某件事
+					- setTimeout(函数, 毫秒数)
+					- clearTimeout(计时器的id)
+				2. 每隔一段时间做某件事
+					- setInterval(函数, 毫秒数)
+					- clearInterval(计时器的id)
+		2. DOM
+			1. DOM树的概念 --> JS通过DOM就可以操作页面上的标签和属性
+			2. 查找标签
+				1. 直接查找
+					1. document.getElementById("id值")             --> 找到具体的标签对象
+					2. document.getElementsByClassName("样式类名") --> 找到标签对象的数组
+					3. document.getElementsByTagName("标签名")     --> 找到标签对象的数组
+					
+				2. 间接查找
+					1. parentElement
+					2. children
+					3. firstElementChild
+					4. lastElementChild
+					5. nextElementSibling
+					6. previousElementSibling
+			3. 标签操作
+				1. 创建标签
+					1. document.createElement("标签名")   *****
+				2. 给标签添加内容
+					1. .innerText
+					2. .innerHTML="<a href="">a标签</a>"
+				3. 把创建的标签对象添加到文档树中
+					1. 父标签.appendChild(新标签)
+					2. 父标签.insertBefore(新标签，子标签)
+				4. 删除标签
+					1. 父标签.removeChild(要删除的子标签)
+				5. 替换
+					1. 父标签.replaceChild(新标签，旧标签)
+			4. 属性操作
+				1. getAttribute()
+				2. setAttribute()
+				3. removeAttribute()
+			5. 获取值（input/select/textarea）
+				1. .value
+				2. .value="要设置的值"
+			6. 操作样式
+				1. 操作class
+					1. className     --> 字符串格式的样式类
+					2. classList     --> 数组格式的样式类
+					3. classList.remove()
+					4. classList.add()
+					5. classList.contains()
+					6. classList.toggle()
+				2. 直接操作CSS样式
+					font-size
+					标签对象.style.fontSize="18px"
+			7. 事件
+				1. 常用事件
+					onlick
+					onfocus
+					onblur
+					onbchange
+				2. 事件的绑定方式
+					1. 直接在标签里写obclick="函数名()"
+					2. 通过JS找到标签给它绑定事件
+						标签对象.onclick=function(){
+						 ...
+						}
+			
+		3. 作业
+			
+2. 今日内容
+	1. 页面的标签加载完之后执行
+		window.onload=function(){...}
+	2. 通常会把给标签绑定事件的JS代码都放在body标签的最后面
+	
+	3. 计时器的大练习
+	
+	4. jQuery:https://www.cnblogs.com/liwenzhou/p/8178806.html
+		1. jQuery是什么？
+		
+		2. jQuery的使用
+			1. 下载jQuery
+				jQuery的版本
+					1.x  √
+					2.x
+					3.x  √
+			2. 导入jQuery(先导入后使用！！！)
+				一个页面只需要导入一次就可以了！！！
+			3. 使用
+				1. 基础语法：
+					jQuery
+					$   一般用这个     --> import gevent as g		
+					
+		3. 	查找标签
+			1. 选择器
+				1. 基本选择器
+					1. $("#id值")
+					2. $("标签名")
+					3. $(".class名")
+					4. $("*")
+					5. $("div.c1")
+					6. $("div,.c1")
+				2. 层级选择器
+					1. $("div .c1")     --> div下面子子孙孙中的有c1样式类的标签
+					2. $("div>.c1")     --> div下面儿子中的有c1样式类的标签
+					3. $("label+input") --> 找到紧挨着label标签下面的input标签
+					4. $("div~p")       --> 找到div同级下面的所有的p标签
+				3. 属性选择器
+					1. $("[s14]")
+					2. $("[type='submit']")
+					3. $("[type!='submit']")
+				4. 基本筛选器
+					1. $("div:first")/$("div:last")
+					2. $("div:eq(3)")/$("div:gt(3)")/$("div:lt(3)")
+					3. $("div:even")/$("div:odd")
+					4. $("div:not(.c1)")   --> 找到没有c1样式类的div标签
+					5. $("div:has(.c1)")   --> 找到内部有c1样式类的div标签
+				5. 表单筛选器
+					1. $(":text")/$(":password") ...
+					2. $("input:checked")
+					3. $(":selected")
+			
+			2. 筛选器
+				1. 上一个
+				2. 下一个
+				3. 祖先标签
+				4. 儿子和兄弟
+				4. 查找
+				5. 筛选
+			
+			3. 操作class
+				1. addClass()
+				2. removeClass()
+				3. hasClass()
+				4. toggleClass()
+			
+3. 今日任务
+	1. 把课上练习找标签的练习题做完
+	2. 整理Blog
+	3. 大作业：左侧菜单
+	4. 下周一检查小米商城首页
+
+
+4. 周末任务
+	1. 复习任务
+		按照之前自己的计划复习Python基础
+	2. 预习任务
+		课后思考：用两个栈实现消息队列的功能？（汉诺牌）
+		继续往下预习jQuery的知识
+		

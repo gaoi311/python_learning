@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta http-equiv="content-Type" charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <title>Title</title>
+</head>
+<body>
+
+<table border="1">
+    <thead>
+    <tr>
+        <th>序号</th>
+        <th>姓名</th>
+        <th>爱好</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td><input type="checkbox"></td>
+        <td>蝇蝇</td>
+        <td>用手</td>
+    </tr>
+    <tr>
+        <td><input type="checkbox"></td>
+        <td>康抻</td>
+        <td>gay in gay out</td>
+    </tr>
+    <tr>
+        <td><input type="checkbox"></td>
+        <td>黄袍哥</td>
+        <td>吹牛逼</td>
+    </tr>
+    </tbody>
+</table>
+<hr>
+<button id="b1">全选</button>
+<button id="b2">反选</button>
+<button id="b3">取消</button>
+<script src="jquery-3.3.1.js"></script>
+<script>
+    // 全选
+    $("#b1").click(function () {
+        // 找到所有的checkbox,选中:prop("checked", true)
+        $(":checkbox").prop("checked", true);
+    });
+    // 取消
+    $("#b3").click(function () {
+        // 找到所有的checkbox,取消选中:prop("checked", false)
+        $(":checkbox").prop("checked", false);
+    });
+    // 反选
+    $("#b2").click(function () {
+        $(":checkbox").each(function () {
+            var value = $(this).prop("checked");
+            if (value){
+                $(this).prop("checked", false);
+            }else {
+                $(this).prop("checked", true);
+            }
+        });
+    });
+</script>
+</body>
+</html>

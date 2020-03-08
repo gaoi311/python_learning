@@ -1,0 +1,5 @@
+Thu, 09 Aug 2018 12:42:24 8.logging模块.py[line:39] DEBUG debug message
+Thu, 09 Aug 2018 12:42:24 8.logging模块.py[line:40] INFO info message
+Thu, 09 Aug 2018 12:42:24 8.logging模块.py[line:41] WARNING warning message
+Thu, 09 Aug 2018 12:42:24 8.logging模块.py[line:42] ERROR error message
+Thu, 09 Aug 2018 12:42:24 8.logging模块.py[line:43] CRITICAL critical message

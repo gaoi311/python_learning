@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="bootstrap-3.3.7/css/bootstrap.css">
+    <link rel="stylesheet" href="../day52/bootstrap-sweetalert/sweetalert.css">
+</head>
+<body>
+
+<button class="btn btn-info">获取天气</button>
+
+<div>
+    <p></p>
+</div>
+
+<script src="jquery-3.3.1.min.js"></script>
+<script src="bootstrap-3.3.7/js/bootstrap.js"></script>
+<script src="../day52/bootstrap-sweetalert/sweetalert.min.js"></script>
+
+<script>
+    $.ajax({
+        url: "https://free-api.heweather.net/s6/weather/now?location=hefei&key=0118c47f1e4a4f4783e835614ae60c3d",
+        type: 'get',
+        success: function (data) {
+            console.log(data);
+            var tmp = data.HeWeather6[0].now.tmp;
+            $("p").html(tmp);
+        }
+    });
+</script>
+</body>
+</html>

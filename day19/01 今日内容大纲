@@ -1,0 +1,95 @@
+课前小甜点
+    如何学习.
+    英语最好的培训机构之一: 华尔街英语.
+    你们之前怎么学英语:
+        听  input   40%
+        说  output   5%
+        读  input   30%
+        写  output  25%
+
+
+    母系英语.
+        input 40%  output 30%  纠正 30%
+
+    python:
+        input 40% 听课,看书,   output 30%  写代码.
+
+01 昨日内容回顾
+    继承:
+        为什么有继承:
+            优化代码,节省代码.
+            提高代码的复用性.
+            提高代码的维护性.
+            让类与类之间发生关系.
+        组合: 让对象与对象发生关系.,
+
+    子类中即实现父类的方法,又实现自己的方法:
+         super().父类方法名(参数(自传self))
+         父类名.父类方法名(参数)
+
+    单继承,多继承.
+    class A:
+        pass
+    class B(A):
+        pass
+    新式类:继承object类的类都叫新式类. python3x中所有的类默认都继承object,python3x中全部都是新式类.
+        广度优先
+    经典类:不继承object类就是经典类. Python2x 默认是经典类,可以让其继承object变成新式类.
+        深度优先
+        深度优先,广度优先: 只能是继承两个类的情况.
+
+02 作业讲解
+03 抽象类,接口类
+    制定一个规范
+    # from abc import ABCMeta,abstractmethod
+#
+#
+# class Payment(metaclass=ABCMeta):  # 抽象类(接口类):
+#     @abstractmethod
+#     def pay(self): pass  # 制定了一个规范
+#     @abstractmethod
+#     def func(self):pass
+#
+#
+# class Alipay(Payment):
+#     def __init__(self,money):
+#         self.money = money
+#
+#     def pay(self):
+#         print('使用支付宝支付了%s' %self.money)
+#
+#
+# class Jdpay(Payment):
+#     def __init__(self, money):
+#         self.money = money
+#
+#     def pay(self):
+#         print('使用京东支付了%s' % self.money)
+#
+# class Wechatpay(Payment):
+#
+#     def __init__(self,money):
+#         self.money = money
+#
+#     def pay(self):
+#         print('使用微信支付了%s' % self.money)
+#
+#
+# def pay(obj):
+#     obj.pay()
+# w1 = Wechatpay(200)
+# a1 = Alipay(200)
+# j1 = Jdpay(100)
+# pay(a1)  # 归一化设计
+# pay(j1)
+#
+# w1 = Wechatpay(300)
+# w1.weixinpay()
+04 多态
+06 封装
+07 预习博客
+    https://www.cnblogs.com/jin-xin/articles/9214247.html
+    明天: 1,静态方法,类方法,属性.
+           2,反射.
+           3,其他的特殊方法.
+08 作业

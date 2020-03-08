@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta http-equiv="content-Type" charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <title>Title</title>
+</head>
+<body>
+
+<button id="b1">添加</button>
+<table border="1">
+    <thead>
+    <tr>
+        <th>序号</th>
+        <th>姓名</th>
+        <th>爱好</th>
+        <th>操作</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>1</td>
+        <td>康抻</td>
+        <td>gay in gay out</td>
+        <td><button class="delete">开除</button></td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>蝇蝇</td>
+        <td>用手</td>
+        <td><button class="delete">开除</button></td>
+    </tr>
+    </tbody>
+</table>
+<script src="jquery-3.3.1.js"></script>
+<script>
+    $("#b1").click(function () {
+        // 在表格的最后添加一行数据
+        // 1. 先有数据
+        var trEle = document.createElement("tr");  // trEle是一个DOM对象
+
+        // var tdEle1 = document.createElement("td");
+        // tdEle1.innerText = "3";
+        // $(trEle).append(tdEle1);
+        // var tdEle2 = document.createElement("td");
+        // tdEle2.innerText = "黄袍哥";
+        // $(trEle).append(tdEle2);
+        // var tdEle3 = document.createElement("td");
+        // tdEle3.innerText = "吹牛逼";
+        // $(trEle).append(tdEle3);
+        trEle.innerHTML = `
+            <td>3</td>
+            <td>黄袍哥</td>
+            <td>吹牛逼</td>
+            <td><button class="delete">开除</button></td>
+        `;
+        // 2. 追加到tbody的最后
+        $("tbody").append(trEle);
+    })
+</script>
+</body>
+</html>

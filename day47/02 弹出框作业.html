@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta http-equiv="content-Type" charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <title>Title</title>
+    <style>
+        .cover {
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-color: rgba(0,0,0,0.4);
+            z-index: 99;
+        }
+        .modal {
+            width: 700px;
+            height: 400px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-left: -350px;
+            margin-top: -200px;
+            background-color: white;
+            z-index: 100;
+        }
+        .close {
+            float: right;
+            margin-right: 15px;
+            margin-top: 10px;
+            font-size: 16px;
+        }
+        .hide {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<button id="b1">点我弹出</button>
+<div class="cover hide"></div>
+<div class="modal hide">
+    <span class="close" id="s1">x</span>
+</div>
+
+<script>
+    var b1Ele = document.getElementById("b1");
+    b1Ele.onclick=function (ev) {
+        document.getElementsByClassName("cover")[0].classList.remove("hide");
+        document.getElementsByClassName("modal")[0].classList.remove("hide");
+    };
+
+    var s1Ele = document.getElementById("s1");
+     s1Ele.onclick=function (ev) {
+        document.getElementsByClassName("cover")[0].classList.add("hide");
+        document.getElementsByClassName("modal")[0].classList.add("hide");
+    }
+</script>
+</body>
+</html>

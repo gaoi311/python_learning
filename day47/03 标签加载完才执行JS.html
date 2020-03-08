@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta http-equiv="content-Type" charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <title>Title</title>
+    <script>
+        // 当页面的标签都加载完之后触发onload事件
+        window.onload = function (ev) {
+            // 1. 找到那个标签
+            var d1Ele = document.getElementById("d1");
+            console.log(d1Ele);
+            // 2. 获取标签的文本内容
+            var s = d1Ele.innerText;
+            // 3. alert弹出
+            alert(s)
+        }
+    </script>
+</head>
+<body>
+<div id="d1">我是div</div>
+
+
+<!--<script src="ooxx.js"></script>-->
+</body>
+</html>

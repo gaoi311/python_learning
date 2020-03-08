@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta http-equiv="content-Type" charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <title>Title</title>
+    <style>
+        body {
+            margin: 0;
+        }
+        .menu {
+            height: 50px;
+            width: 100%;
+            background-color: #0f0f0f;
+            color: darkgray;
+        }
+        .menu>ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        .menu>ul>li {
+            float: left;
+            line-height: 50px;
+            margin-right: 15px;
+            position: relative;
+        }
+        .shop-cart {
+            background-color: #00a9ff;
+            color: white;
+            height: 50px;
+            width: 100px;
+            position: absolute;
+            right: 0;
+            display: none;
+        }
+        .hover>.shop-cart {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+<div class="menu">
+    <ul>
+        <li>登录</li>
+        <li>注册</li>
+        <li class="cart">购物车
+            <div class="shop-cart">
+                空空如也~
+            </div>
+        </li>
+    </ul>
+</div>
+<script src="jquery-3.3.1.js"></script>
+<script>
+    // $(".cart").hover(
+    //     function () {
+    //         // 鼠标移进来
+    //         $(".shop-cart").css("display", "block");
+    //
+    // },
+    //     function () {
+    //         // 鼠标移出去
+    //          $(".shop-cart").css("display", "none");
+    //     }
+    // )
+
+    // $(".cart").hover(
+    //     function () {
+    //         $(this).addClass("hover");
+    //     },
+    //     function () {
+    //         $(this).removeClass("hover");
+    //     }
+    // );
+
+    $('.menu').on('mouseenter', '.cart', function() {//绑定鼠标进入事件
+        $(this).addClass('hover');
+    });
+
+    $('.menu').on('mouseleave', '.cart', function() {//绑定鼠标划出事件
+        $(this).removeClass('hover');
+    });
+
+</script>
+</body>
+</html>

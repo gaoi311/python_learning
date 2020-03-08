@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta http-equiv="content-Type" charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <title>Title</title>
+</head>
+<body>
+
+<!--<button id="b1" onclick="f()">点我</button>-->
+<button id="b1">点我</button>
+<hr>
+<button class="c1">蝇蝇</button>
+
+<script src="jquery-3.3.1.js"></script>
+<script>
+    // 1. 定义一个函数
+    function f() {
+        alert(123);
+    }
+
+    // 2.通过js绑定
+    // var b1Ele = document.getElementById("b1");
+    // b1Ele.onclick = function () {
+    //     f();
+    // };
+
+    // 3. jQuery绑定事件方式
+    // $("#b1").click(function () {
+    //     f();
+    // });
+
+    // 4. jQuery on绑定事件
+    $("#b1").on("click", function () {
+        f();
+    });
+
+    // $(".c1").click(function () {
+    //     alert("蝇蝇");
+    // });
+    // 利用事件冒泡的原理，进行事件委托 ，把.c1样式类的事件委托给父标签body来处理
+    $("body").on("click", ".c1", function () {
+        alert("蝇蝇");
+    })
+</script>
+</body>
+</html>

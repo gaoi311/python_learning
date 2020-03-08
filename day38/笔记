@@ -1,0 +1,125 @@
+课程回顾：
+    生产者消费者模型
+      主要为了解决强耦耦合的问题
+    队列  from multiprocessing import Queue
+       先进先出
+       队列本身是安全的
+      from multiprocessing import JoinableQueue
+       task_done（）    每消费一个数据，就返回一个标识
+       join（）         接收task_done返回的标识，以便可以知道队列中的数据什么时候被消费完了
+
+    管道（了解）
+      本身是不安全的
+      from multiprocessing import Pipe
+      con1，con2 = Pipe（）
+      con1可以收发数据，con2也可以收发数据（全双工）
+      队列 = 管道 + 锁
+
+    多进程之间共享内存数据：
+       from multiprocessing import Manager,Value
+
+    进程池
+      from multiprocessing import Pool
+        p.map(func，iterable)
+
+        p.apply(func，args=()) 同步的做任务
+          池中的进程是普通进程，不会跟随着主进程的结束而结束。
+
+        p.apply_async(func,args=(),callback=None)  异步，记得加上close和join
+          close：不再接受新的任务，准备关闭
+          join：等待进程池中所有进程执行完毕任务。
+          池中的进程是守护进程，主进程的代码执行完毕，守护进程就结束了
+
+     在进程池中的回调函数是主进程调用的，和子进程无关。
+
+
+
+今天的内容：
+
+      1 学习线程
+
+          线程被称作轻量级的进程。  GIL：全局解释锁（只有Cpython解释器才有）
+                                    对于线程来说，因为有了GIL，所以没有真正的并行
+
+          计算机的执行单位以线程为单位。计算机的最小可执行是线程。
+          进程是资源分配的基本单位。线程是可执行的基本单位，是可被调度的基本单位。
+          线程不可以自己独立拥有资源。线程的执行，必须依赖于所属进程中的资源。
+          进程中必须至少应该有一个线程。
+
+          线程又分为用户级线程和内核级线程（了解）
+            用户级线程：对于程序员来说的，这样的线程完全被程序员控制执行，调度
+            内核级线程：对于计算机内核来说的，这样的线程完全被内核控制调度。
+
+      进程由 代码段  数据段  PCB组成（process control block）
+      线程由 代码段  数据段  TCB组成（thread control block）
+
+      线程和进程的比较
+          thread - 线程
+          import thread 操作线程的模块
+          import threading 用这个去操作线程
+         (1) cpu切换进程要比cpu切换线程 慢很多
+             在python中，如果IO操作过多的话，使用多线程最好了
+         (2) 在同一个进程内，所有线程共享这个进程的pid，也就是说所有线程共享所属进程的所有资源和内存地址
+         (3) 在同一个进程内，所有线程共享该进程中的全局变量
+
+         (4) 因为有GIL锁的存在，在Cpython中，没有真正的线程并行。但是有真正的多进程并行
+             当你的任务是计算密集的情况下，使用多进程好
+            总结：在CPython中，IO密集用多线程，计算密集用多进程
+
+        （5）关于守护线程和守护进程的事情（注意：代码执行结束并不代表程序结束）
+            守护进程：要么自己正常结束，要么根据父进程的代码执行结束而结束
+            守护线程：要么自己正常结束，要么根据父线程的执行结束而结束
+
+      2线程的使用方法
+        （1）锁机制
+             递归锁
+                 RLock()    可以有无止尽的锁，但是会有一把万能钥匙
+             互斥锁：
+                 Lock()     一把钥匙配一把锁
+             GIL：全局解释器锁
+                锁的是线程，是CPython解释器上的一个锁，锁的是线程，意思是在同一时间只允许一个线程访问cpu
+        （2） 信号量：
+            from threading import Semaphore
+            去看多进程的信号量
+
+        （3） 事件
+            from threading import Event
+            去看多进程的事件机制
+
+        （4） 条件
+            from threading import Condition
+            条件是让程序员自行去调度线程的一个机制
+            # Condition涉及4个方法
+            # acquire()
+            # release()
+            # wait()    是指让线程阻塞住
+            # notify(int)  是指给wait发一个信号，让wait变成不阻塞
+            #     int是指，你要给多少给wait发信号
+
+        （5） 定时器
+            from threading import Timer
+                # Timer(time,func)
+                # time：睡眠的时间，以秒为单位
+                # func：睡眠时间之后，需要执行的任务
+
+
+今天的面试题：
+    进程和线程的区别？
+    你认为什么时候用多线程好？什么时候用多进程好？
+    给你一个任务场景，让你去分析，如果让你去研发，你是选择用多线程还是多进程？
+    解释以下GIL锁？
+
+
+作业：
+  ftp到底做没做完？
+     删除文件和文件夹
+     上传下载完毕后加一个对文件校验
+     断点续传
+  做一个多进程的TCP
+  做一个进程池的TCP
+  做一个多线程的TCP
+  必须掌握一个生产者消费者模型的代码
+
+
+
+
